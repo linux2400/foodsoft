@@ -6,7 +6,7 @@ class Message < ActiveRecord::Base
   
   scope :pending, -> { where(:email_state => 0) }
   scope :sent, -> { where(:email_state => 1) }
-  scope :public, -> { where(:private => false) }
+  scope :pub, -> { where(:private => false) }
 
   # Values for the email_state attribute: :none, :pending, :sent, :failed
   EMAIL_STATE = {
@@ -58,7 +58,7 @@ class Message < ActiveRecord::Base
     add_recipients([user])
   end
 
-  # Returns true if this message is a system message, i.e. was sent automatically by the FoodSoft itself.
+  # Returns true if this message is a system message, i.e. was sent automatically by Foodsoft itself.
   def system_message?    
     self.sender_id.nil?
   end

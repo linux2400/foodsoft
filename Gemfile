@@ -1,12 +1,11 @@
 # A sample Gemfile
 source "https://rubygems.org"
-ruby "2.0.0"
 
-gem "rails", '~> 4.0.0'
+gem "rails", '~> 4.1'
 
 
-gem 'sass-rails',   '~> 4.0.0'
-gem 'coffee-rails', '~> 4.0.0'
+gem 'sass-rails', '>= 4.0' # version to avoid bundle getting confused
+gem 'coffee-rails'
 gem 'less-rails'
 gem 'uglifier', '>= 1.0.3'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -35,7 +34,7 @@ gem 'simple-navigation'
 gem 'simple-navigation-bootstrap'
 gem 'ransack'
 gem 'acts_as_tree'
-gem "rails-settings-cached", "0.3.1"
+gem 'rails-settings-cached'
 gem 'resque'
 gem 'whenever', require: false # For defining cronjobs, see config/schedule.rb
 gem 'protected_attributes'
@@ -84,7 +83,7 @@ end
 
 group :test do
   gem 'rspec-rails'
-  gem 'factory_girl_rails', '~> 4.0'
+  gem 'factory_girl_rails'
   gem 'faker'
   gem 'capybara'
   # webkit and poltergeist don't seem to work yet
@@ -92,7 +91,7 @@ group :test do
   gem 'database_cleaner'
   gem 'connection_pool'
   # need to include rspec components before i18n-spec or rake fails in test environment
-  gem 'rspec-core'
+  gem 'rspec-core', '~> 2.14'
   gem 'rspec-expectations'
   gem 'rspec-rerun'
   gem 'i18n-spec'
